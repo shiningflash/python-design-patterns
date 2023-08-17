@@ -1,9 +1,5 @@
-from abc import ABC, abstractmethod
-from random import randrange
-from typing import List
-
-from subject import Subject, ConcreteSubject
-from observer import Observer, ConcreteObserverA, ConcreteObserverB
+from subject import ConcreteSubject
+from observer import ConcreteObserverA, ConcreteObserverB
 
 
 if __name__ == '__main__':
