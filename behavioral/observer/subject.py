@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from random import randrange
-from typing import List
+from typing import List, Set
 
 from observer import Observer
 
@@ -43,7 +43,9 @@ class ConcreteSubject(Subject):
 
     def registerObserver(self, observer: Observer) -> None:
         print('Subject: Registered an observer ...')
-        self._observers.append(observer)
+        # Check duplicates
+        if observer not in self._observers:
+            self._observers.append(observer)
     
     def removeObserver(self, observer: Observer) -> None:
         print('Subject: Removed an observer ...')
